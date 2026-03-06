@@ -76,11 +76,11 @@ body{
     background-color: var(--primary-medium);
     color: var(--white);
     border: none;
-    border-radius: 100px;
+    border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.2s;
 }
-.botao-pesquisa btn-pesquisar:hover{
+.botao-pesquisa, btn-pesquisar:hover{
     background-color: var(--primary-dark);
 }
 .tabela-wrapper{
@@ -103,4 +103,32 @@ body{
 }
 #tabelaEstoque tr:nth-child(even){
     background-color: var(--gray-light);
+}
+#paginacao{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.controle-paginacao label{
+    font-size: 15px;
+    color: var(--primary-dark);
+}
+#pagina{
+    border: 1px solid var(--primary-medium);
+    border-radius: 5px;
+}
+.container-btn #btnVoltar, #btnProximo{
+    margin-top: 0px;
+    padding: 5px 10px;
+    background-color: var(--primary-medium);
+    color: var(--white);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.container-btn #btnVoltar, #btnProximo:hover{
+    background-color: var(--primary-dark);
 }
