@@ -5,12 +5,24 @@
 package conections;
 
 import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 
 /**
  *
  * @author helde
  */
-public class conections {
+public class conections implements AutoCloseable {
+
+    public PreparedStatement preparedStatement(String sql) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void close() throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     public class ConectionsFactory{
     //Dados da conexão
         private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
@@ -21,12 +33,16 @@ public class conections {
         //Métodos
     public static conections getConections(){
         conections con = null;
-        
-        try{
+        try {
             Class.forName(DRIVER);
-            con = DriverManager.getConections(URL, USER, PASSWORD);
-            System.out.println("Banco de dados conectado.");
+            con = (conections) DriverManager.getConnection(URL, USER, PASSWORD);
+            System.out.println("Banco de dados conectado.");}
+        catch (Exception e) {
+            System.out.println("Banco de dados não conectado.");
+            e.printStackTrace();
         }
+        
+        return con;
         }
     }
 }
