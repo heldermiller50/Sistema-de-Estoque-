@@ -1,34 +1,36 @@
 package controller;
 
 import dao.UserDAO;
+import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
-import java.rmi.server.ServerCloneException;
 import model.UserModel;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet{
     
-    protected  void doPost(HttpServletRequest request,HttpServletResponse response){
-            throws ServerCloneException, IOException{
+    @Override
+    protected  void doPost(HttpServletRequest request,HttpServletResponse response)
+            throws ServletException, IOException{
  
-        String usuario = request.getParameter("users");
-        String senha = request.getParameter("passw");
+        String users = request.getParameter("users");
+        String passw = request.getParameter("passw");
         
         UserModel userModel = new UserModel();
-        userModel.setUsername(usuario);
-        userModel.setPassword(senha);
+        
+        userModel.setUsers(users);
+        userModel.setPassw(passw);
         
         UserDAO dao = new UserDAO();
         
         if(dao.validarLogin(userModel)){
             HttpSession session = request.getSession();
             
-            session.setAttribute("usuario", usuario);
+            session.setAttribute("usuario", users);
             
             response.sendRedirect("pages/dashboard.html");
         }else{

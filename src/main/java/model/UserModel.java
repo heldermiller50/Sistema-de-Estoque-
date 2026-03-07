@@ -3,25 +3,26 @@ package model;
 public class UserModel {
     
     private int id;
-    private String username;
-    private String password;
+    private String users;
+    private String passw;
     
     public UserModel(){
         
     }
     
-    public String getUsername(){
-        return username;  
+    public String getUsers(){
+        return users;  
     }
     
-    public void setUsername(){
-        this.username = username;
+    public void setUsers(){
+        this.users = users;
     }
-     public String getPassword(){
-        return password;  
+     public String getPassw(){
+        return passw;  
     }
     
-    public void setPassword(){
-        this.password = password;
+    public void setPassw(){
+        this.passw = passw;
     }
+
 }
