@@ -20,14 +20,14 @@ public class LoginServlet extends HttpServlet{
         String users = request.getParameter("users");
         String passw = request.getParameter("passw");
         
-        UserModel userModel = new UserModel();
-        
-        userModel.setUsers(users);
-        userModel.setPassw(passw);
+        UserModel user = new UserModel();
+       
+        user.setUsers();
+        user.setPassw();
         
         UserDAO dao = new UserDAO();
         
-        if(dao.validarLogin(userModel)){
+        if(dao.validarLogin(user)){
             HttpSession session = request.getSession();
             
             session.setAttribute("usuario", users);

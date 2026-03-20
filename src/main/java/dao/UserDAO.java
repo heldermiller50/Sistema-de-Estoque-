@@ -12,8 +12,8 @@ public class UserDAO {
         try (var con = conections.ConectionsFactory.getConections()){
             
             PreparedStatement stmt = con.preparedStatement(sql);
-            stmt.setString(1, userModel.getUsername());
-            stmt.setString(2, userModel.getPassword());
+            stmt.setString(1, userModel.getUsers());
+            stmt.setString(2, userModel.getPassw());
             
             ResultSet rs = stmt.executeQuery();
             
