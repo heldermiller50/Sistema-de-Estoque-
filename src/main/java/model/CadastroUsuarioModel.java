@@ -16,7 +16,13 @@ public class CadastroUsuarioModel {
     private String nomeUsuario;
     private String senha;
     private String funcao;
-
+    private long   matricula;
+    private String sexo;
+    private long   dtaNascimento;  
+    private String email;
+    private long  telefone;
+    private String usuario;
+            
     public String getNome() {
         return nome;
     }
@@ -121,4 +127,53 @@ public class CadastroUsuarioModel {
         this.funcao = funcao;
     }
     
+    public long getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(long matricula) {
+        this.matricula = matricula;   
 }
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+    
+    public long getDtaNascimento() {
+        return dtaNascimento;
+    }
+
+    public void setDtaNascimento(long dtaNascimento) {
+        this.dtaNascimento = dtaNascimento;
+    }
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+     public long getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(long telefone) {
+        this.telefone = telefone;
+    }
+     public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+    
+    
+    
+}
+
+
+
