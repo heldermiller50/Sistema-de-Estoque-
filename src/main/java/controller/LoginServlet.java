@@ -32,9 +32,9 @@ public class LoginServlet extends HttpServlet{
             
             session.setAttribute("usuario", users);
             
-            response.sendRedirect("pages/dashboard.html");
+            response.sendRedirect(request.getContextPath() + "/index.html");
         }else{
-            response.sendRedirect("index.html");
+            response.sendRedirect(request.getContextPath() + "/pages/dashboard.html");
         }
     }
 }
